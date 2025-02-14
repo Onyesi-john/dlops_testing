@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Onyesi-john/dlops_testing.git'
+                git branch: 'main', url: 'https://github.com/Onyesi-john/dlops_testing.git'
             }
         }
 
