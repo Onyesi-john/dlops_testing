@@ -1,0 +1,15 @@
+artifact_uri: file:///home/john/dlops_testing/dlops_testing/mlruns/297611335133995099/35f182c98c344cae9984a59eef2283eb/artifacts
+end_time: 1739523811568
+entry_point_name: ''
+experiment_id: '297611335133995099'
+lifecycle_stage: active
+run_id: 35f182c98c344cae9984a59eef2283eb
+run_name: painted-shoat-112
+run_uuid: 35f182c98c344cae9984a59eef2283eb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739523807358
+status: 3
+tags: []
+user_id: john
