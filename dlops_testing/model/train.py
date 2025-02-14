@@ -25,7 +25,7 @@ criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.01)
 
 # Define example input for logging the model with signature
-example_input = torch.randn(1, X.shape[1])  # Shape should match the input size of your model
+example_input = X[0].numpy()  # Convert tensor to numpy.ndarray
 
 # Log model with input example for signature
 mlflow.set_experiment("dlops_experiment")
@@ -50,3 +50,4 @@ with mlflow.start_run():
     # Log the model and the final loss after training
     mlflow.pytorch.log_model(model, "model", input_example=example_input)
     mlflow.log_metric("final_loss", loss.item())
+    print("Training complete, model and metrics logged to MLflow.")

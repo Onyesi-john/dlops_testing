@@ -1,0 +1,15 @@
+artifact_uri: file:///home/john/dlops_testing/dlops_testing/mlruns/297611335133995099/b1168ddf8a8f44f8a664f941ca514d33/artifacts
+end_time: 1739524523869
+entry_point_name: ''
+experiment_id: '297611335133995099'
+lifecycle_stage: active
+run_id: b1168ddf8a8f44f8a664f941ca514d33
+run_name: placid-dove-393
+run_uuid: b1168ddf8a8f44f8a664f941ca514d33
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739524523849
+status: 4
+tags: []
+user_id: john
