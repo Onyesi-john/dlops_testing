@@ -37,7 +37,14 @@ pipeline {
 
         stage('Train Model') {
             steps {
-                sh 'python3 model/train.py'
+                script {
+                    // Activate the virtual environment and run the model training script
+                    sh '''
+                        . venv/bin/activate
+                        cd dlops_testing  // Navigate to the model directory if needed
+                        python3 train.py  // Run the training script
+                    '''
+                }
             }
         }
 
