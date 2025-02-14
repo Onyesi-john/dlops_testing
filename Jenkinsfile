@@ -22,9 +22,18 @@ pipeline {
 
         stage('Set Up Python Environment') {
             steps {
-                sh 'python3 -m venv venv && source venv/bin/activate'
-            }
-        }
+               script {
+            // Create and activate the virtual environment
+            sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install --upgrade pip
+                pip install -r requirements.txt
+            '''
+                }
+             }
+          }
+
 
         stage('Train Model') {
             steps {
