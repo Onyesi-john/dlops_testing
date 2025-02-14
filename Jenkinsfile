@@ -37,7 +37,7 @@ pipeline {
 
         stage('Train Model') {
             steps {
-                sh 'python model/train.py'
+                sh 'python3 model/train.py'
             }
         }
 
@@ -69,7 +69,7 @@ pipeline {
                 script {
                     def loss = sh(script: "python model/check_loss.py", returnStdout: true).trim()
                     if (loss.toDouble() > 0.5) {
-                        sh 'python model/retrain.py'
+                        sh 'python3 model/retrain.py'
                     }
                 }
             }
