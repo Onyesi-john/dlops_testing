@@ -13,6 +13,13 @@ pipeline {
             }
         }
 
+        stage('Verify Python Installation') {
+             steps {
+                  sh 'python3 --version'  // Check if Python 3 is installed
+            }
+        }
+
+
         stage('Set Up Python Environment') {
             steps {
                 sh 'python3 -m venv venv && source venv/bin/activate'
@@ -40,11 +47,7 @@ pipeline {
             }
         }
 
-        stage('Deploy to Kubernetes') {
-            steps {
-                sh 'kubectl apply -f deployment/k8s.yaml'
-            }
-        }
+        
 
         stage('Monitor Model Performance') {
             steps {
