@@ -1,23 +1,30 @@
+import os
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import pandas as pd
 import mlflow
 import mlflow.pytorch
-import os
 
 from model import SimpleNN
 
 # Load training data
-data_path = "data.csv"
+data_path = "model/data.csv"
 
 # Check if the file exists
 if not os.path.exists(data_path):
     raise FileNotFoundError(f"Dataset file {data_path} not found. Please make sure the file exists.")
 
 data = pd.read_csv(data_path)
+
+# Print out the first few rows of data to verify it's being loaded
+print(f"Data preview:\n{data.head()}")
+
 X = torch.tensor(data.iloc[:, :-1].values, dtype=torch.float32)
 y = torch.tensor(data.iloc[:, -1].values, dtype=torch.float32).view(-1, 1)
+
+# Verify shape of input data
+print(f"Shape of X: {X.shape}, Shape of y: {y.shape}")
 
 # Initialize model
 model = SimpleNN()
@@ -50,4 +57,9 @@ with mlflow.start_run():
     # Log the model and the final loss after training
     mlflow.pytorch.log_model(model, "model", input_example=example_input)
     mlflow.log_metric("final_loss", loss.item())
+
+    # Check logging confirmation
+    mlflow.log_param("epochs", 10)
+    mlflow.log_param("optimizer", "Adam")
+    mlflow.log_param("loss_function", "MSELoss")
     print("Training complete, model and metrics logged to MLflow.")

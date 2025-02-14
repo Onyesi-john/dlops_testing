@@ -1,0 +1,15 @@
+artifact_uri: file:///home/john/dlops_testing/dlops_testing/mlruns/297611335133995099/51395778066f4d79b8c9bd24578a35ec/artifacts
+end_time: 1739525395037
+entry_point_name: ''
+experiment_id: '297611335133995099'
+lifecycle_stage: active
+run_id: 51395778066f4d79b8c9bd24578a35ec
+run_name: silent-stag-56
+run_uuid: 51395778066f4d79b8c9bd24578a35ec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739525390997
+status: 3
+tags: []
+user_id: john
